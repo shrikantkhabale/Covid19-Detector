@@ -20,8 +20,8 @@ def hello_world():
         # code for inference
         input_features = [fever,pain,age,runnyNose,diffBreath]
         infprob = clf.predict_proba([input_features])[0][1]
-        print(infprob)
-        return render_template('show.html',inf=round(infprob)*100)
+        print(round(infprob))
+        return render_template('show.html',inf=round(infprob*100))
     return render_template('index.html')
     #return "Hello World!" + str(infprob)
 
